@@ -6,6 +6,14 @@ import { NetworkError } from "./utils/errorHandler";
 
 let productList: Array<Product> = [];
 
+/**
+ * Execute the api call
+ * Catches any error that occurs and 
+ * displays the appropriate error message
+ * If no error occurs, it parses the api resonse
+ * to construct an array of product objects and
+ * display on the console
+ */
 (async () => {
     try {
         const products = await fetchProductApi()

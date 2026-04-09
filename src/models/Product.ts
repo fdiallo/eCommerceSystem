@@ -1,3 +1,6 @@
+/**
+ * Define a model class used to map api response data
+ */
 export default class Product {
     public static taxPercentage = 4.75;
     public static groceriesTaxPercentage = 3;
@@ -25,18 +28,31 @@ export default class Product {
         this.weight = weight
     }
 
+    /**
+     * Getter for price
+     */
     get getPrice(): number {
         return this.price
     }
 
+    /**
+     * Getter for category
+     */
     get getCategory(): string {
         return this.category
     }
 
+    /**
+     * Getter for discountPercentage
+     */
     get getDiscountPercentage(): number {
         return this.discountPercentage
     }
 
+    /**
+     * Displays product data
+     * @returns string
+     */
     displayDetails(): string {
         return `
         SKU: ${this.sku}
@@ -49,6 +65,10 @@ export default class Product {
         Weight: ${this.weight}\n`
     }
 
+    /**
+     * Computes price with discount
+     * @returns price with discount
+     */
     getPriceWithDiscount(): number {
         return this.price - (this.price * this.discountPercentage) / 100
     }

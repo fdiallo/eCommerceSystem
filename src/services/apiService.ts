@@ -4,10 +4,8 @@ import { NetworkError } from "../utils/errorHandler";
 /**
  * Define a function called fetchProductApi that makes 
  * an api call using the fetch api
- * @returns
+ * @returns Promise
  */
-
-
 export async function fetchProductApi(): Promise<any> {
     const url = "https://dummyjson.com/products"
     try {
@@ -18,7 +16,7 @@ export async function fetchProductApi(): Promise<any> {
         }
         const data = await response.json()
         return data.products
-        
+
     } catch (error) {
         console.log(error)
     } finally {
